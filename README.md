@@ -1,12 +1,12 @@
-# Aerial Mapping with Deep Learning in Zanzibar, Tanzania
+# Aerial Mapping with Drones & Deep Learning in Zanzibar, Tanzania
 
 ## Motivation:
 
 Open source R&D notebooks of all the steps (deep learning and otherwise) to create a state of the art deep learning building detector & classifier from high-resolution aerial/drone imagery. Something like this: 
 
-![https://www.dropbox.com/s/77zlqgfn4l15y1a/grid119_preview.png](https://www.dropbox.com/s/77zlqgfn4l15y1a/grid119_preview.png?dl=1)
-
 ### Interactive version: [http://alpha.anthropo.co/znz-119](http://alpha.anthropo.co/znz-119)
+![static/grid119_preview.png](static/grid119_preview.png)
+
 
 ## Background:
 
@@ -30,15 +30,17 @@ https://competitions.codalab.org/competitions/20100#learn_the_details
 
 > The imagery data is released as OpenData using the Creative Commons Attribution 4.0 International license, attribution must be given to: Commission for Lands (COLA), Revolutionary Government of Zanzibar (RGoZ)
 
-## Notebooks currently in repo
+## Notebooks currently available
 
-### znz-segment: 
+### [znz-segment-buildingfootprint-20181119.ipynb](znz-segment-buildingfootprint-20181119.ipynb)
+
 - segmentation model for pixel-level mapping of every building structure, regardless of condition 
 
-### znz-classify: 
+### [znz-classify-buildings-20181119.ipynb](znz-classify-buildings-20181119.ipynb)
+
 - building classification by condition (Complete, Incomplete, Foundation, Empty) after detection/segmentation
 
-## Training data already preprocessed & ready for DL notebooks
+## Training data preprocessed & ready for DL notebooks
 
 ### znz-segment-z19.zip (212 MB):
 
@@ -53,7 +55,7 @@ https://competitions.codalab.org/competitions/20100#learn_the_details
 - Unzips as /images 
 - https://www.dropbox.com/s/9ge0a2kpuv0a0lk/znz-classify.zip?dl=0
 
-## Thanks to
+## Thanks
 
 - Commission for Lands (COLA), Revolutionary Government of Zanzibar (RGoZ)
 - Zanzibar Mapping Initiative
@@ -62,14 +64,14 @@ https://competitions.codalab.org/competitions/20100#learn_the_details
 - Fast.ai team and library v1
 - Fast.ai forum participants and fellow students (particularly @KarlH, @henripal for code/nbs)
 
-
-
-## TODO notebooks
+## To Do
 
 - deep learning:
-  - get fastai lib v1 segmentation model up to prior performance level (from fastai lib v0.7)
+  - train segmentation model in fastai v1 up to prior performance level (from fastai lib v0.7)
 - preprocessing:
   - data prep and image mask/chip creation
 - postprocessing:
   - polygonization
+  - prediction thresholding and clean-up
+
 
