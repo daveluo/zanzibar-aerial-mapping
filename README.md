@@ -4,7 +4,7 @@
 
 Open source R&D notebooks of all the steps (deep learning and otherwise) to create a state of the art deep learning building detector & classifier from high-resolution aerial/drone imagery. Something like this: 
 
-![https://www.dropbox.com/s/77zlqgfn4l15y1a/grid119_preview.png?dl=1](https://www.dropbox.com/s/77zlqgfn4l15y1a/grid119_preview.png?dl=1)
+![https://www.dropbox.com/s/77zlqgfn4l15y1a/grid119_preview.png](https://www.dropbox.com/s/77zlqgfn4l15y1a/grid119_preview.png?dl=1)
 
 ### Interactive version: [http://alpha.anthropo.co/znz-119](http://alpha.anthropo.co/znz-119)
 
