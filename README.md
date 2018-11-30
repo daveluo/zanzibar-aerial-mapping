@@ -30,15 +30,19 @@ https://competitions.codalab.org/competitions/20100#learn_the_details
 
 > The imagery data is released as OpenData using the Creative Commons Attribution 4.0 International license, attribution must be given to: Commission for Lands (COLA), Revolutionary Government of Zanzibar (RGoZ)
 
-## Notebooks currently available
+## Most Current Notebooks:
 
-### [znz-segment-buildingfootprint-20181119.ipynb](znz-segment-buildingfootprint-20181119.ipynb)
+### [znz-segment-buildingfootprint-20181129-comboloss-rn34.ipynb](znz-segment-buildingfootprint-20181129-comboloss-rn34.ipynb)
 
 - segmentation model for pixel-level mapping of every building structure, regardless of condition 
+- combined BCE/dice loss function, pretrained resnet34 encoder
+- dice: 0.857, accuracy: 98.2%
 
 ### [znz-classify-buildings-20181119.ipynb](znz-classify-buildings-20181119.ipynb)
 
 - building classification by condition (Complete, Incomplete, Foundation, Empty) after detection/segmentation
+- BCE loss, pretrained resnet50
+- accuracy: 94.16%
 
 ## Training data preprocessed & ready for DL notebooks
 
