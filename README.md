@@ -9,7 +9,7 @@ Open source R&D notebooks of all the steps (deep learning and otherwise) to crea
 
 ## Results:
 
-[1st place in WeRobotics' Open AI Tanzania Challenge](https://blog.werobotics.org/2018/12/06/announcing-the-winners-of-the-open-ai-tanzania-challenge/)
+[Top 2 in WeRobotics' Open AI Tanzania Challenge](https://blog.werobotics.org/2018/12/06/announcing-the-winners-of-the-open-ai-tanzania-challenge/)
 
 
 |                             | Mean F1 score | Foundation F1 | Unfinished F1 | Completed F1 | All Buildings F1 |
