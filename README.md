@@ -4,12 +4,19 @@
 
 Open source R&D notebooks of all the steps (deep learning and otherwise) to create a state of the art deep learning building detector & classifier from high-resolution aerial/drone imagery. Something like this: 
 
-### Interactive version: [http://alpha.anthropo.co/znz-demo](http://alpha.anthropo.co/znz-demo)
-![static/grid119_preview.png](static/znz-demo.gif)
+### Interactive version: [http://alpha.anthropo.co/znz-119](http://alpha.anthropo.co/znz-119)
+![static/grid119_preview.png](static/grid119_preview.png)
 
 ## Results:
 
-[1st place in WeRobotics' Open AI Tanzania Challenge](https://blog.werobotics.org/2018/12/06/announcing-the-winners-of-the-open-ai-tanzania-challenge/)
+As of 1/18/2019 (internal val only):
+
+|                             | Mean F1 score | Foundation F1 | Unfinished F1 | Completed F1 | All Buildings F1 |
+|-----------------------------|---------------|---------------|---------------|--------------|------------------|
+| Internal Val (grid 042)     | 0.728         | 0.718         | 0.755         | 0.710        | 0.796            |
+
+
+[Top 2 in WeRobotics' Open AI Tanzania Challenge](https://blog.werobotics.org/2018/12/06/announcing-the-winners-of-the-open-ai-tanzania-challenge/)
 
 
 |                             | Mean F1 score | Foundation F1 | Unfinished F1 | Completed F1 | All Buildings F1 |
@@ -53,19 +60,34 @@ https://competitions.codalab.org/competitions/20100#learn_the_details
 
 ## Current notebooks:
 
-### [znz-segment-buildingfootprint-20181205-comboloss-rn34.ipynb](znz-segment-buildingfootprint-20181205-comboloss-rn34.ipynb)
+### [znz-segment-buildingfootprint-20190108-alldata.ipynb](znz-segment-buildingfootprint-20190108-alldata.ipynb)
 
 - segmentation model for pixel-level mapping of every building structure, regardless of condition 
+- trained on image chips at three zooms: z20, z19, z18
 - combined BCE/dice loss function, pretrained resnet34 encoder
-- dice: 0.854, accuracy: 98.2%
+- dice: 0.863, accuracy: 98.1%
 
-### [znz-classify-buildings-20181206.ipynb](znz-classify-buildings-20181206.ipynb)
+### [znz-classify-buildings-20190118.ipynb](znz-classify-buildings-20190118.ipynb)
 
 - building classification by condition (Complete, Incomplete, Foundation, Empty) after detection/segmentation
 - BCE loss, pretrained resnet50
 - accuracy: 94%
-- t-SNE and Grad-CAM demos
-- prediction demo
+
+### [znz-inference-20190118.ipynb](znz-inference-20190118.ipynb)
+
+- windowed reads and sub-windowed reads with rasterio to run inference on cloud-optimized geotiffs (COG) of arbitirary sizes
+- merge back to full cog extent
+
+### [znz-postprocess-20190118.ipynb](znz-postprocess-20190118.ipynb)
+
+- thresholding, polygonization of windowed reads, deduping, save as geojson
+- creating detected building crops for classifier
+- updating geojson with class predictions
+
+### [znz-eval-20190118.ipynb](znz-eval-20190118.ipynb)
+
+- evaluation scripts for precision, recall, F1 score
+- adapted from spacenet utilities: https://github.com/SpaceNetChallenge/utilities/tree/master/python
 
 ## Ready-to-train preprocessed datasets
 
@@ -78,7 +100,8 @@ https://competitions.codalab.org/competitions/20100#learn_the_details
 
 - 20,176 images of various sizes & shapes labeled as 4 classes: Complete, Incomplete, Foundation, Empty
 - Unzips as /images 
-- 
+
+
 ## Thanks
 
 - Commission for Lands (COLA), Revolutionary Government of Zanzibar (RGoZ)
@@ -90,7 +113,9 @@ https://competitions.codalab.org/competitions/20100#learn_the_details
 
 ## TO DO
 
-- [x] train segmentation model in fastai v1 up to prior performance level of dice = 0.847, accuracy = 0.977 from fastai v0.7
+- [x] train segmentation model in fastai v1 up to or exceeding prior performance level of dice = 0.847, accuracy = 0.977 from fastai v0.7
+- [x] polygonization nb
+- [x] prediction thresholding and clean-up nb
+- [x] evaluation scripts
+
 - [] training image mask/tile creation nb
-- [] polygonization nb
-- [] prediction thresholding and clean-up nb
