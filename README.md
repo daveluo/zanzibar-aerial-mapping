@@ -4,8 +4,27 @@
 
 Open source R&D notebooks of all the steps (deep learning and otherwise) to create a state of the art deep learning building detector & classifier from high-resolution aerial/drone imagery. Something like this: 
 
-### Interactive version: [http://alpha.anthropo.co/znz-demo](http://alpha.anthropo.co/znz-demo)
+### Interactive version: [https://alpha.anthropo.co/znz-demo](https://alpha.anthropo.co/znz-demo)
 ![static/znz-demo.gif](static/znz-demo.gif)
+
+
+## 7/25/2019 Update:
+
+In process of rewriting everything as a series of interactive geospatial deep learning tutorials on [Google Colab](https://colab.research.google.com/). 
+
+**See 1st tutorial published 7/25/2019** for a complete data creation, model creation, inference, and evaluation workflow for building segmentation:
+
+- [Medium post](https://medium.com/@anthropoco/how-to-segment-buildings-on-drone-imagery-with-fast-ai-cloud-native-geodata-tools-ae249612c321?source=friends_link&sk=57b82002ac47724ecf9a2aaa98de994b)
+
+- [Previewable notebook](https://nbviewer.jupyter.org/github/daveluo/zanzibar-aerial-mapping/blob/master/geo_fastai_tutorial01_public_v1.ipynb)
+
+- [Open in Colab](https://colab.research.google.com/github/daveluo/zanzibar-aerial-mapping/blob/master/geo_fastai_tutorial01_public_v1.ipynb)
+
+Prior dev notebooks can be found in /archive with details preserved below the line:
+
+
+------------------------
+
 
 ## Results:
 
@@ -58,33 +77,33 @@ https://competitions.codalab.org/competitions/20100#learn_the_details
 
 ![static/overview_predict.png](static/overview_predict.png)
 
-## Current notebooks:
+## Notebooks (7/25/19 moved to archive):
 
-### [znz-segment-buildingfootprint-20190108-alldata.ipynb](znz-segment-buildingfootprint-20190108-alldata.ipynb)
+### [archive/znz-segment-buildingfootprint-20190108-alldata.ipynb](archive/znz-segment-buildingfootprint-20190108-alldata.ipynb)
 
 - segmentation model for pixel-level mapping of every building structure, regardless of condition 
 - trained on image chips at three zooms: z20, z19, z18
 - combined BCE/dice loss function, pretrained resnet34 encoder
 - dice: 0.863, accuracy: 98.1%
 
-### [znz-classify-buildings-20190118.ipynb](znz-classify-buildings-20190118.ipynb)
+### [archive/znz-classify-buildings-20190118.ipynb](archive/znz-classify-buildings-20190118.ipynb)
 
 - building classification by condition (Complete, Incomplete, Foundation, Empty) after detection/segmentation
 - BCE loss, pretrained resnet50
 - accuracy: 94%
 
-### [znz-inference-20190118.ipynb](znz-inference-20190118.ipynb)
+### [archive/znz-inference-20190118.ipynb](archive/znz-inference-20190118.ipynb)
 
 - windowed reads and sub-windowed reads with rasterio to run inference on cloud-optimized geotiffs (COG) of arbitirary sizes
 - merge back to full cog extent
 
-### [znz-postprocess-20190118.ipynb](znz-postprocess-20190118.ipynb)
+### [archive/znz-postprocess-20190118.ipynb](archive/znz-postprocess-20190118.ipynb)
 
 - thresholding, polygonization of windowed reads, deduping, save as geojson
 - creating detected building crops for classifier
 - updating geojson with class predictions
 
-### [znz-eval-20190118.ipynb](znz-eval-20190118.ipynb)
+### [archive/znz-eval-20190118.ipynb](archive/znz-eval-20190118.ipynb)
 
 - evaluation scripts for precision, recall, F1 score
 - adapted from spacenet utilities: https://github.com/SpaceNetChallenge/utilities/tree/master/python
@@ -117,5 +136,4 @@ https://competitions.codalab.org/competitions/20100#learn_the_details
 - [x] polygonization nb
 - [x] prediction thresholding and clean-up nb
 - [x] evaluation scripts
-
-- [] training image mask/tile creation nb
+- [x] training image mask/tile creation nb
